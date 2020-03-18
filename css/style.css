@@ -11335,7 +11335,7 @@ html[dir=rtl] ._1tfR8{
     display:flex;
     -webkit-justify-content:center;
     justify-content:center;
-    min-height:90px;
+    min-height:60px;
     position:relative;
     z-index:2
 }
@@ -14777,7 +14777,7 @@ html[dir=rtl] ._2k1om .xVBLL,html[dir=rtl] .r4crx ._2-_Pl{
     height:40px
 }
 html[dir] .r4crx ._2GgBs{
-    padding-top:40px;
+    padding-top:20px;
     text-align:center
 }
 .r4crx ._3m_5X{
@@ -16135,4 +16135,15 @@ html[dir=rtl] ._2ICcy:after{
 }
 #main {
     display:none;
+}
+
+._2oKVP {
+    display: flex;
+    justify-content: center;
+}
+
+#picture-camera {
+    height: 100%;
+    width: auto;
+    text-align: center;
 }

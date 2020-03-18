@@ -1,4 +1,4 @@
-class Format{
+export class Format{
 
     // Recebe o nome do elemento
     // cria uma div com id em camelcase no HTML e retorna 
@@ -23,6 +23,19 @@ class Format{
         } else {
             return `${minutes}:${seconds.toString().padStart(2, '0')}`;
         }
+    }
+
+    static dateToTime(date, locale = 'pt-BR'){
+
+        return date.toLocaleTimeString(locale, {
+            hours: '2-digit',
+            minutes: '2-digit'
+        });
+
+    }
+
+    static timeStampToTime(timeStamp){
+        return(timeStamp && typeof timeStamp.toDate === 'function') ? Format.dateToTime(timeStamp.toDate()) : '';
     }
 
 }
