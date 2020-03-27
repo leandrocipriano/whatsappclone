@@ -28,10 +28,50 @@ export class Format{
     static dateToTime(date, locale = 'pt-BR'){
 
         return date.toLocaleTimeString(locale, {
-            hours: '2-digit',
-            minutes: '2-digit'
+            hour: '2-digit',
+            minute: '2-digit'
         });
 
+    }
+
+    static bytes(bytes, decimals = 2) {
+        if (bytes === 0) return '0 Bytes';
+    
+        const k = 1024;
+        const dm = decimals < 0 ? 0 : decimals;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+    
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    }
+
+    static fileType(fileType){
+        switch (fileType){
+
+            case 'application/pdf':
+                return 'pdf';
+            break;
+
+            case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+            case 'application/vnd.ms-powerpoint':
+                return 'powerpoint';
+            break;
+
+            case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+            case 'application/vnd.ms-excel':
+                return 'excel';
+            break;
+
+            case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+            case 'application/vnd.msword':
+                return 'doc';
+            break;
+
+            default:
+                return 'Não tratado';
+            break;
+        }
     }
 
     static timeStampToTime(timeStamp){

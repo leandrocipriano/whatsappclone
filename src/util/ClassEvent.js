@@ -32,6 +32,6 @@ export class ClassEvent {
                 event.apply(null, args);
 
             });
-        }
-    }
+        };
+    };
 }
